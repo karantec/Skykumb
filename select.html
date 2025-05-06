@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Your Grade - ShivKumbh</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #2e3192;
+        --secondary-color: #ff6b6b;
+        --accent-color: #4dabf7;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: var(--primary-color) !important;
+      }
+
+      .nav-link {
+        font-weight: 600;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .btn-secondary {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+      }
+
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("/api/placeholder/1200/600") center/cover no-repeat;
+        padding: 80px 0;
+        color: white;
+      }
+
+      .grade-card {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        text-align: center;
+        height: 100%;
+      }
+
+      .grade-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary-color);
+      }
+
+      .grade-icon {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+      }
+
+      .grade-title {
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+
+      .exam-card {
+        border-left: 4px solid var(--primary-color);
+        transition: all 0.3s ease;
+      }
+
+      .exam-card:hover {
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      footer {
+        background-color: #161c2d;
+        color: white;
+        padding: 60px 0 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">ShivKumbh</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="course.html">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="select.html">Select Grade</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" href="about.html">About Us</a>
+            </li>
+          </ul>
+          <div class="ms-auto d-flex">
+            <button class="btn btn-outline-primary me-2">Login</button>
+            <button class="btn btn-primary">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container text-center">
+        <h1 class="display-4 fw-bold mb-4">Select Your Grade</h1>
+        <p class="lead mb-5">
+          Choose your class to discover personalized learning programs designed
+          for your academic needs
+        </p>
+      </div>
+    </section>
+
+    <!-- Grade Selection -->
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold">Choose Your Class</h2>
+          <p class="lead">
+            Explore courses tailored for your specific grade level
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-3 col-sm-6">
+            <div class="card grade-card p-4">
+              <div class="grade-icon">
+                <i class="fas fa-school"></i>
+              </div>
+              <h3 class="grade-title">Class 5-6</h3>
+              <p>Building strong foundations in core subjects</p>
+              <a
+                href="course.html?grade=5-6"
+                class="btn btn-outline-primary mt-3"
+                >Explore</a
+              >
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="card grade-card p-4">
+              <div class="grade-icon">
+                <i class="fas fa-book-open"></i>
+              </div>
+              <h3 class="grade-title">Class 7-8</h3>
+              <p>Developing conceptual understanding and analytical skills</p>
+              <a
+                href="course.html?grade=7-8"
+                class="btn btn-outline-primary mt-3"
+                >Explore</a
+              >
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="card grade-card p-4">
+              <div class="grade-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3 class="grade-title">Class 9-10</h3>
+              <p>Comprehensive preparation for board examinations</p>
+              <a
+                href="course.html?grade=9-10"
+                class="btn btn-outline-primary mt-3"
+                >Explore</a
+              >
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="card grade-card p-4">
+              <div class="grade-icon">
+                <i class="fas fa-atom"></i>
+              </div>
+              <h3 class="grade-title">Class 11-12</h3>
+              <p>Specialized streams with career-focused learning</p>
+              <a
+                href="course.html?grade=11-12"
+                class="btn btn-outline-primary mt-3"
+                >Explore</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exam Preparation -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold">Competitive Exam Preparation</h2>
+          <p class="lead">
+            Specialized courses for various entrance examinations
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card exam-card h-100 p-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-primary bg-opacity-10 p-3 rounded me-3">
+                  <i class="fas fa-flask text-primary fs-4"></i>
+                </div>
+                <h4 class="mb-0">JEE (Main + Advanced)</h4>
+              </div>
+              <p>
+                Comprehensive preparation for engineering entrance exams with
+                IIT alumni mentors
+              </p>
+              <a
+                href="course.html?exam=jee"
+                class="btn btn-sm btn-outline-primary mt-auto align-self-start"
+                >View Course</a
+              >
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card exam-card h-100 p-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-primary bg-opacity-10 p-3 rounded me-3">
+                  <i class="fas fa-heartbeat text-primary fs-4"></i>
+                </div>
+                <h4 class="mb-0">NEET UG</h4>
+              </div>
+              <p>
+                Medical entrance preparation with top faculty and extensive
+                practice material
+              </p>
+              <a
+                href="course.html?exam=neet"
+                class="btn btn-sm btn-outline-primary mt-auto align-self-start"
+                >View Course</a
+              >
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card exam-card h-100 p-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-primary bg-opacity-10 p-3 rounded me-3">
+                  <i class="fas fa-trophy text-primary fs-4"></i>
+                </div>
+                <h4 class="mb-0">Olympiads</h4>
+              </div>
+              <p>
+                Preparation for various Olympiad exams (NTSE, KVPY, Science,
+                Math Olympiads)
+              </p>
+              <a
+                href="course.html?exam=olympiads"
+                class="btn btn-sm btn-outline-primary mt-auto align-self-start"
+                >View Course</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guidance Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="display-5 fw-bold mb-4">
+              Need Help Selecting the Right Course?
+            </h2>
+            <p class="lead mb-4">
+              Our academic counselors can guide you to choose the perfect
+              learning path based on your goals and current academic level.
+            </p>
+            <div class="d-flex">
+              <button class="btn btn-primary me-3">
+                <i class="fas fa-phone-alt me-2"></i> Call Counselor
+              </button>
+              <button class="btn btn-outline-primary">
+                <i class="fas fa-calendar-alt me-2"></i> Book Appointment
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="/api/placeholder/600/400"
+              alt="Academic Guidance"
+              class="img-fluid rounded shadow"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <h3 class="fw-bold mb-4">ShivKumbh</h3>
+            <p>
+              India's most trusted online learning platform for students from
+              Class 5 to 12.
+            </p>
+            <div class="social-icons mt-4">
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <h5 class="mb-4">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="index.html" class="text-white text-decoration-none"
+                  >Home</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">About Us</a>
+              </li>
+              <li class="mb-2">
+                <a href="course.html" class="text-white text-decoration-none"
+                  >Courses</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="grade-selection.html"
+                  class="text-white text-decoration-none"
+                  >Select Grade</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <h5 class="mb-4">Courses</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >Class 5-8</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >Class 9-10</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >Class 11-12</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >JEE Preparation</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >NEET Preparation</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h5 class="mb-4">Contact Us</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i> 123 Education Tower,
+                Knowledge Park, Delhi, India
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-phone-alt me-2"></i> +91 98765 43210
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-envelope me-2"></i> support@shivkumbh.com
+              </li>
+            </ul>
+            <form class="mt-4">
+              <div class="input-group mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                />
+                <button class="btn btn-primary" type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr class="my-4 bg-white" />
+        <div class="row">
+          <div class="col-md-6">
+            <p class="small mb-md-0">© 2025 ShivKumbh. All Rights Reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="text-white text-decoration-none small me-3"
+              >Privacy Policy</a
+            >
+            <a href="#" class="text-white text-decoration-none small me-3"
+              >Terms of Service</a
+            >
+            <a href="#" class="text-white text-decoration-none small"
+              >Refund Policy</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - ShivKumbh</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #2e3192;
+        --secondary-color: #ff6b6b;
+        --accent-color: #4dabf7;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: var(--primary-color) !important;
+      }
+
+      .nav-link {
+        font-weight: 600;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .btn-secondary {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+      }
+
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("/api/placeholder/1200/600") center/cover no-repeat;
+        padding: 100px 0;
+        color: white;
+      }
+
+      .mission-card {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        border-top: 5px solid var(--primary-color);
+        height: 100%;
+      }
+
+      .mission-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .team-card {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        text-align: center;
+      }
+
+      .team-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .team-img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin: -75px auto 20px;
+      }
+
+      .timeline {
+        position: relative;
+        padding-left: 50px;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: var(--primary-color);
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -40px;
+        top: 5px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: white;
+        border: 4px solid var(--primary-color);
+      }
+
+      .value-card {
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        height: 100%;
+        background-color: #f8f9fa;
+        transition: all 0.3s;
+      }
+
+      .value-card:hover {
+        background-color: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+      }
+
+      .value-icon {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      footer {
+        background-color: #161c2d;
+        color: white;
+        padding: 60px 0 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">ShivKumbh</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="course.html">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="select.html">Select Grade</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" href="about.html">About Us</a>
+            </li>
+          </ul>
+          <div class="ms-auto d-flex">
+            <button class="btn btn-outline-primary me-2">Login</button>
+            <button class="btn btn-primary">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container text-center">
+        <h1 class="display-3 fw-bold mb-4">About ShivKumbh</h1>
+        <p class="lead mb-5">
+          Empowering students across India with quality education since 2015
+        </p>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="display-5 fw-bold mb-4">Our Story</h2>
+            <p class="lead">
+              Founded in 2015 by a group of IIT alumni, ShivKumbh began with a
+              simple mission: to make quality education accessible to every
+              student in India.
+            </p>
+            <p>
+              What started as a small coaching initiative in Delhi has now grown
+              into India's leading online learning platform, serving over 10
+              million students across the country. Our innovative teaching
+              methods and personalized learning approach have helped countless
+              students achieve academic excellence.
+            </p>
+            <a href="#" class="btn btn-primary mt-3"
+              >Learn More About Our Journey</a
+            >
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="/api/placeholder/600/400"
+              alt="ShivKumbh Founders"
+              class="img-fluid rounded shadow"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission and Vision -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold">Our Mission & Vision</h2>
+          <p class="lead">Guiding principles that drive everything we do</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card mission-card p-4 h-100">
+              <div class="card-body text-center">
+                <i
+                  class="fas fa-bullseye text-primary mb-3"
+                  style="font-size: 2.5rem"
+                ></i>
+                <h3 class="mb-3">Our Mission</h3>
+                <p class="mb-0">
+                  To democratize quality education by making it accessible,
+                  affordable, and engaging for students across India, regardless
+                  of their geographical location or economic background.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mission-card p-4 h-100">
+              <div class="card-body text-center">
+                <i
+                  class="fas fa-eye text-primary mb-3"
+                  style="font-size: 2.5rem"
+                ></i>
+                <h3 class="mb-3">Our Vision</h3>
+                <p class="mb-0">
+                  To become India's most trusted learning platform that
+                  transforms how students learn by leveraging technology and
+                  innovative pedagogy to create future-ready individuals.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold">Our Core Values</h2>
+          <p class="lead">The foundation of our educational philosophy</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h4>Student First</h4>
+              <p>
+                Every decision we make is guided by what's best for our
+                students' learning and growth.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h4>Innovation</h4>
+              <p>
+                We constantly evolve our teaching methods to make learning more
+                effective and engaging.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-hand-holding-heart"></i>
+              </div>
+              <h4>Integrity</h4>
+              <p>
+                We maintain the highest standards of honesty and transparency in
+                all our interactions.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h4>Collaboration</h4>
+              <p>
+                We believe in the power of teamwork between students, parents,
+                and educators.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h4>Excellence</h4>
+              <p>
+                We strive for the highest quality in content, delivery, and
+                student outcomes.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-rupee-sign"></i>
+              </div>
+              <h4>Accessibility</h4>
+              <p>
+                Quality education should be affordable and available to all,
+                regardless of background.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Milestones -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold">Our Journey</h2>
+          <p class="lead">Key milestones in our growth story</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>2015</h4>
+            <p class="fw-bold">Founded in Delhi</p>
+            <p>
+              Started as a small offline coaching center with 5 teachers and 50
+              students
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h4>2017</h4>
+            <p class="fw-bold">Launched Online Platform</p>
+            <p>Expanded reach beyond Delhi with our first digital courses</p>
+          </div>
+          <div class="timeline-item">
+            <h4>2019</h4>
+            <p class="fw-bold">1 Million Students</p>
+            <p>
+              Reached our first major milestone of 1 million registered students
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h4>2021</h4>
+            <p class="fw-bold">Series B Funding</p>
+            <p>Raised $20M to expand our technology and content offerings</p>
+          </div>
+          <div class="timeline-item">
+            <h4>2023</h4>
+            <p class="fw-bold">10 Million Students</p>
+            <p>
+              Became one of India's largest online learning platforms serving
+              students across 500+ cities
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold">Meet Our Leadership</h2>
+          <p class="lead">
+            The passionate educators and innovators behind ShivKumbh
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card team-card pt-5 pb-3 px-3">
+              <img
+                src="/api/placeholder/300/300"
+                alt="Founder"
+                class="team-img"
+              />
+              <h4 class="mb-1">Dr. Amit Sharma</h4>
+              <p class="text-muted mb-3">Founder & CEO</p>
+              <p class="mb-3">
+                IIT Delhi alumnus with 15+ years in education technology
+              </p>
+              <div class="social-links">
+                <a href="#" class="text-primary mx-2"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="#" class="text-primary mx-2"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card team-card pt-5 pb-3 px-3">
+              <img src="/api/placeholder/300/300" alt="CTO" class="team-img" />
+              <h4 class="mb-1">Priya Patel</h4>
+              <p class="text-muted mb-3">Chief Academic Officer</p>
+              <p class="mb-3">
+                Former HOD at Delhi Public School with 20+ years teaching
+                experience
+              </p>
+              <div class="social-links">
+                <a href="#" class="text-primary mx-2"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="#" class="text-primary mx-2"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card team-card pt-5 pb-3 px-3">
+              <img src="/api/placeholder/300/300" alt="CAO" class="team-img" />
+              <h4 class="mb-1">Rajiv Malhotra</h4>
+              <p class="text-muted mb-3">Chief Technology Officer</p>
+              <p class="mb-3">
+                Tech visionary with expertise in EdTech platforms and AI
+              </p>
+              <div class="social-links">
+                <a href="#" class="text-primary mx-2"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="#" class="text-primary mx-2"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="#" class="btn btn-outline-primary px-4">View Full Team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+      <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-4">Join the ShivKumbh Community</h2>
+        <p class="lead mb-5">
+          Become part of India's most trusted learning platform
+        </p>
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-light btn-lg me-3 px-4 py-2">
+            Start Free Trial
+          </button>
+          <button class="btn btn-outline-light btn-lg px-4 py-2">
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <h3 class="fw-bold mb-4">ShivKumbh</h3>
+            <p>
+              India's most trusted online learning platform for students from
+              Class 5 to 12.
+            </p>
+            <div class="social-icons mt-4">
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <h5 class="mb-4">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="index.html" class="text-white text-decoration-none"
+                  >Home</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="about.html" class="text-white text-decoration-none"
+                  >About Us</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="course.html" class="text-white text-decoration-none"
+                  >Courses</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="grade-selection.html"
+                  class="text-white text-decoration-none"
+                  >Select Grade</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <h5 class="mb-4">Courses</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >Class 5-8</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >Class 9-10</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >Class 11-12</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >JEE Preparation</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >NEET Preparation</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h5 class="mb-4">Contact Us</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i> 123 Education Tower,
+                Knowledge Park, Delhi, India
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-phone-alt me-2"></i> +91 98765 43210
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-envelope me-2"></i> support@shivkumbh.com
+              </li>
+            </ul>
+            <form class="mt-4">
+              <div class="input-group mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                />
+                <button class="btn btn-primary" type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr class="my-4 bg-white" />
+        <div class="row">
+          <div class="col-md-6">
+            <p class="small mb-md-0">© 2025 ShivKumbh. All Rights Reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="text-white text-decoration-none small me-3"
+              >Privacy Policy</a
+            >
+            <a href="#" class="text-white text-decoration-none small me-3"
+              >Terms of Service</a
+            >
+            <a href="#" class="text-white text-decoration-none small"
+              >Refund Policy</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
