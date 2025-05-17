@@ -2001,1033 +2001,1385 @@
               </div>
 
               <!-- CTA Section -->
-              <div class="cta-container">
-                <a href="/course-finder" class="cta-button"
-                  >Find Your Perfect Course</a
+              <div class="cta-container text-center my-5">
+                <a
+                  href="#"
+                  class="btn btn-primary cta-button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#courseFinderModal"
                 >
+                  Find Your Perfect Course
+                </a>
               </div>
             </div>
           </div>
         </section>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-      </body>
-    </html>
 
-    <!-- Optimized Testimonials Section with Horizontal Carousel -->
-
-    <style>
-      /* Testimonials Section Styles */
-      .testimonials-section {
-        padding: 5rem 0;
-        background: linear-gradient(to right, #f8f9fa, #e9ecef);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .testimonials-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2320304b' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-        z-index: 0;
-      }
-
-      .section-title {
-        position: relative;
-        font-size: 2.25rem;
-        font-weight: 700;
-        color: #1e3c72;
-        margin-bottom: 3rem;
-        text-align: center;
-      }
-
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: -0.75rem;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(to right, #1e3c72, #2a5298);
-        border-radius: 2px;
-      }
-
-      /* Testimonial Cards Carousel */
-      .testimonial-carousel-container {
-        position: relative;
-        padding: 1.5rem 0;
-      }
-
-      .testimonial-carousel {
-        display: flex;
-        gap: 1.5rem;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
-        padding: 1rem 0.5rem 2rem 0.5rem;
-      }
-
-      .testimonial-carousel::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Edge */
-      }
-
-      .testimonial-card {
-        min-width: 300px;
-        background: white;
-        border-radius: 1rem;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        padding: 1.5rem;
-        transition: all 0.3s ease;
-        position: relative;
-        border: none;
-        transform: translateY(0);
-      }
-
-      .testimonial-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      }
-
-      .testimonial-content {
-        position: relative;
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #4a5568;
-        margin-bottom: 1.5rem;
-        font-style: italic;
-      }
-
-      .testimonial-content::before {
-        content: """;
-        position: absolute;
-        top: -20px;
-        left: -10px;
-        font-size: 4rem;
-        color: rgba(66, 153, 225, 0.2);
-        font-family: serif;
-        z-index: 0;
-      }
-
-      .testimonial-author {
-        display: flex;
-        align-items: center;
-        margin-top: 1rem;
-      }
-
-      .author-avatar {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 1rem;
-        background-color: #e2e8f0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #1e3c72;
-        font-weight: 700;
-        font-size: 1.25rem;
-      }
-
-      .author-info {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .author-name {
-        font-weight: 700;
-        color: #2d3748;
-        margin-bottom: 0.25rem;
-      }
-
-      .author-title {
-        font-size: 0.875rem;
-        color: #718096;
-      }
-
-      .rating {
-        color: #f59e0b;
-        font-size: 1.25rem;
-        margin-bottom: 0.75rem;
-      }
-
-      /* Navigation buttons */
-      .carousel-controls {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-
-      .carousel-control {
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        background-color: #1e3c72;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: none;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .carousel-control:hover {
-        background-color: #2a5298;
-        transform: scale(1.05);
-      }
-
-      .carousel-control:focus {
-        outline: none;
-      }
-
-      .carousel-control:disabled {
-        background-color: #cbd5e0;
-        cursor: not-allowed;
-      }
-
-      /* Auto-scrolling animation with pause on hover */
-      @keyframes scrollLeft {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(calc(-320px * 5)); /* Adjust based on card width + gap */
-        }
-      }
-
-      .auto-scroll {
-        animation: scrollLeft 30s linear infinite;
-      }
-
-      .testimonial-carousel:hover .auto-scroll {
-        animation-play-state: paused;
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        .testimonial-card {
-          min-width: 280px;
-        }
-
-        .section-title {
-          font-size: 1.75rem;
-        }
-      }
-    </style>
-
-    <section class="testimonials-section" id="testimonials">
-      <div class="container">
-        <h2 class="section-title">What Our Students Say</h2>
-
-        <div class="testimonial-carousel-container">
-          <div class="testimonial-carousel">
-            <!-- Testimonial Card 1 -->
-            <div class="testimonial-card">
-              <div class="rating">★★★★★</div>
-              <p class="testimonial-content">
-                "Amazing platform! The instructors are extremely knowledgeable
-                and helped me improve my JEE scores drastically. The interactive
-                sessions make complex concepts easy to understand."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-avatar">RS</div>
-                <div class="author-info">
-                  <div class="author-name">Riya Sharma</div>
-                  <div class="author-title">JEE Aspirant</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial Card 2 -->
-            <div class="testimonial-card">
-              <div class="rating">★★★★★</div>
-              <p class="testimonial-content">
-                "The live classes are so engaging and interactive. I never feel
-                bored during the sessions. Best decision ever! The teachers
-                explain concepts in a way that's easy to grasp."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-avatar">AV</div>
-                <div class="author-info">
-                  <div class="author-name">Aman Verma</div>
-                  <div class="author-title">Class 10</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial Card 3 -->
-            <div class="testimonial-card">
-              <div class="rating">★★★★★</div>
-              <p class="testimonial-content">
-                "Excellent teachers and easy-to-understand content. The
-                step-by-step explanations and visual aids make learning
-                enjoyable. I've seen significant improvement in my grades."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-avatar">NS</div>
-                <div class="author-info">
-                  <div class="author-name">Neha Singh</div>
-                  <div class="author-title">Class 8</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial Card 4 -->
-            <div class="testimonial-card">
-              <div class="rating">★★★★☆</div>
-              <p class="testimonial-content">
-                "Recorded sessions let me revise anytime, anywhere. This
-                flexibility has been a game-changer for my NEET preparation. The
-                platform is user-friendly and accessible."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-avatar">KM</div>
-                <div class="author-info">
-                  <div class="author-name">Kabir Mehta</div>
-                  <div class="author-title">NEET Aspirant</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial Card 5 -->
-            <div class="testimonial-card">
-              <div class="rating">★★★★★</div>
-              <p class="testimonial-content">
-                "Supportive faculty and great study materials. The mentors are
-                always available to clear doubts. The practice questions have
-                been crucial for my board exam preparation."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-avatar">SR</div>
-                <div class="author-info">
-                  <div class="author-name">Sneha Raj</div>
-                  <div class="author-title">Class 12</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial Card 6 -->
-            <div class="testimonial-card">
-              <div class="rating">★★★★☆</div>
-              <p class="testimonial-content">
-                "User-friendly platform with excellent live doubt support. The
-                instant feedback system has helped me identify my weak areas and
-                work on them effectively."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-avatar">HK</div>
-                <div class="author-info">
-                  <div class="author-name">Harsh Kapoor</div>
-                  <div class="author-title">Class 11</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial Card 7 -->
-            <div class="testimonial-card">
-              <div class="rating">★★★★★</div>
-              <p class="testimonial-content">
-                "Regular tests helped me stay on track. Highly recommended! The
-                detailed performance analytics give clear insights into my
-                progress and areas for improvement."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-avatar">IM</div>
-                <div class="author-info">
-                  <div class="author-name">Ishita Malhotra</div>
-                  <div class="author-title">Class 9</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial Card 8 -->
-            <div class="testimonial-card">
-              <div class="rating">★★★★★</div>
-              <p class="testimonial-content">
-                "The mentors here really care about your success. They go above
-                and beyond to ensure you understand concepts thoroughly. Their
-                dedication is commendable."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-avatar">AS</div>
-                <div class="author-info">
-                  <div class="author-name">Anuj Saini</div>
-                  <div class="author-title">JEE Droppers Batch</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial Card 9 -->
-            <div class="testimonial-card">
-              <div class="rating">★★★★☆</div>
-              <p class="testimonial-content">
-                "Parent dashboard helped me track my child's progress. The
-                detailed reports and communication channels with teachers make
-                it easy to stay involved in my child's education."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-avatar">MG</div>
-                <div class="author-info">
-                  <div class="author-name">Manish Gupta</div>
-                  <div class="author-title">Parent</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial Card 10 -->
-            <div class="testimonial-card">
-              <div class="rating">★★★★★</div>
-              <p class="testimonial-content">
-                "Affordable pricing with top-quality teaching! The value for
-                money is exceptional. I've tried other platforms but none match
-                the quality of education provided here."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-avatar">PB</div>
-                <div class="author-info">
-                  <div class="author-name">Pooja Batra</div>
-                  <div class="author-title">Class 6</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-controls">
-            <button
-              class="carousel-control prev-btn"
-              aria-label="Previous testimonials"
-            >
-              <i class="bi bi-chevron-left"></i>
-            </button>
-            <button
-              class="carousel-control next-btn"
-              aria-label="Next testimonials"
-            >
-              <i class="bi bi-chevron-right"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <script>
-      // JavaScript for testimonial carousel functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        const carousel = document.querySelector(".testimonial-carousel");
-        const prevBtn = document.querySelector(".prev-btn");
-        const nextBtn = document.querySelector(".next-btn");
-        const cardWidth = 320; // Card width + gap
-
-        // Scroll carousel left
-        prevBtn.addEventListener("click", function () {
-          carousel.scrollBy({
-            left: -cardWidth * 2,
-            behavior: "smooth",
-          });
-        });
-
-        // Scroll carousel right
-        nextBtn.addEventListener("click", function () {
-          carousel.scrollBy({
-            left: cardWidth * 2,
-            behavior: "smooth",
-          });
-        });
-
-        // Clone testimonials for infinite effect
-        const testimonialCards = document.querySelectorAll(".testimonial-card");
-        testimonialCards.forEach((card) => {
-          const clone = card.cloneNode(true);
-          carousel.appendChild(clone);
-        });
-
-        // Check scroll position to enable/disable buttons
-        carousel.addEventListener("scroll", function () {
-          const scrollLeft = carousel.scrollLeft;
-          const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-
-          prevBtn.disabled = scrollLeft <= 0;
-          nextBtn.disabled = scrollLeft >= maxScrollLeft - 5;
-        });
-
-        // Auto scroll functionality
-        let isScrolling = false;
-        let scrollInterval;
-
-        function startAutoScroll() {
-          if (!isScrolling) {
-            isScrolling = true;
-            scrollInterval = setInterval(() => {
-              if (
-                carousel.scrollLeft >=
-                carousel.scrollWidth / 2 - carousel.clientWidth
-              ) {
-                carousel.scrollLeft = 0;
-              } else {
-                carousel.scrollLeft += 1;
-              }
-            }, 30);
+        <!-- Modal -->
+        <style>
+          /* Add gradient styles */
+          .modal-content {
+            background: linear-gradient(135deg, #f5f7ff 0%, #e2e7ff 100%);
+            border: none;
+            border-radius: 15px;
           }
-        }
 
-        function stopAutoScroll() {
-          isScrolling = false;
-          clearInterval(scrollInterval);
-        }
+          .modal-header {
+            background: linear-gradient(135deg, #7928ca, #ff0080);
+            color: white;
+            border-radius: 15px 15px 0 0;
+            padding: 1.5rem;
+            border-bottom: none;
+          }
 
-        // Start auto-scroll by default
-        startAutoScroll();
+          .btn-primary {
+            background: linear-gradient(135deg, #7928ca, #ff0080);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(121, 40, 202, 0.3);
+          }
 
-        // Pause on hover/touch
-        carousel.addEventListener("mouseenter", stopAutoScroll);
-        carousel.addEventListener("touchstart", stopAutoScroll);
+          .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(121, 40, 202, 0.4);
+            background: linear-gradient(135deg, #6922b5, #e5007a);
+          }
 
-        // Resume on mouse leave/touch end
-        carousel.addEventListener("mouseleave", startAutoScroll);
-        carousel.addEventListener("touchend", startAutoScroll);
-      });
-    </script>
-    <!-- Students & Parents Section -->
-    <!-- AI-Powered Learning Advantages Section -->
+          .feature-icon {
+            background: linear-gradient(
+              135deg,
+              rgba(121, 40, 202, 0.1),
+              rgba(255, 0, 128, 0.1)
+            );
+            color: #7928ca;
+          }
 
-    <style>
-      /* AI Learning Section Styles */
-      .ai-learning-section {
-        padding: 5rem 0;
-        background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
-        position: relative;
-        overflow: hidden;
-      }
+          .testimonial {
+            background: linear-gradient(135deg, #ffffff, #f0f2ff);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+          }
 
-      .ai-learning-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e3c72' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        opacity: 1;
-        z-index: 0;
-      }
+          .form-control:focus,
+          .form-select:focus {
+            border-color: #7928ca;
+            box-shadow: 0 0 0 0.25rem rgba(121, 40, 202, 0.25);
+          }
 
-      .section-header {
-        position: relative;
-        margin-bottom: 3rem;
-        z-index: 1;
-      }
+          .success-message {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: center;
+            display: none;
+          }
 
-      .section-title {
-        font-size: 2.25rem;
-        font-weight: 700;
-        color: #1e3c72;
-        margin-bottom: 1rem;
-        position: relative;
-        display: inline-block;
-      }
+          .course-badge {
+            background: linear-gradient(
+              135deg,
+              rgba(121, 40, 202, 0.1),
+              rgba(255, 0, 128, 0.1)
+            );
+            color: #7928ca;
+          }
+        </style>
 
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: -0.75rem;
-        left: 0;
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(to right, #1e3c72, #2a5298);
-        border-radius: 2px;
-      }
-
-      .section-subtitle {
-        font-size: 1.125rem;
-        color: #4a5568;
-        max-width: 800px;
-      }
-
-      .ai-feature-card {
-        background-color: #fff;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        height: 100%;
-        position: relative;
-        z-index: 1;
-        border: none;
-      }
-
-      .ai-feature-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-          0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      }
-
-      .ai-feature-icon {
-        width: 64px;
-        height: 64px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(135deg, #1e3c72, #2a5298);
-        color: white;
-        border-radius: 12px;
-        margin-bottom: 1.5rem;
-        font-size: 1.75rem;
-      }
-
-      .ai-feature-title {
-        color: #2d3748;
-        font-weight: 700;
-        font-size: 1.25rem;
-        margin-bottom: 0.75rem;
-      }
-
-      .ai-feature-text {
-        color: #4a5568;
-        font-size: 1rem;
-        line-height: 1.6;
-      }
-
-      .ai-demo-wrapper {
-        background: white;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
-        height: 100%;
-      }
-
-      .ai-chat-header {
-        background: linear-gradient(to right, #1e3c72, #2a5298);
-        color: white;
-        padding: 1rem 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-      }
-
-      .ai-chat-icon {
-        width: 36px;
-        height: 36px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.25rem;
-      }
-
-      .ai-chat-title {
-        font-weight: 600;
-        margin: 0;
-        font-size: 1.125rem;
-      }
-
-      .ai-chat-body {
-        padding: 1.5rem;
-        height: 350px;
-        overflow-y: auto;
-      }
-
-      .chat-message {
-        display: flex;
-        margin-bottom: 1.5rem;
-      }
-
-      .chat-message.user {
-        flex-direction: row-reverse;
-      }
-
-      .message-avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        flex-shrink: 0;
-      }
-
-      .message-avatar.ai {
-        background-color: #1e3c72;
-        color: white;
-      }
-
-      .message-avatar.user {
-        background-color: #e2e8f0;
-        color: #1e3c72;
-      }
-
-      .message-content {
-        max-width: 75%;
-        padding: 1rem;
-        border-radius: 12px;
-        margin: 0 1rem;
-      }
-
-      .chat-message.ai .message-content {
-        background-color: #f3f4f6;
-        color: #1f2937;
-      }
-
-      .chat-message.user .message-content {
-        background-color: #1e3c72;
-        color: white;
-      }
-
-      .message-time {
-        font-size: 0.75rem;
-        opacity: 0.7;
-        margin-top: 0.5rem;
-        text-align: right;
-      }
-
-      .chat-input {
-        display: flex;
-        align-items: center;
-        padding: 1rem 1.5rem;
-        border-top: 1px solid #e2e8f0;
-      }
-
-      .chat-input input {
-        flex: 1;
-        padding: 0.75rem 1rem;
-        border: 1px solid #e2e8f0;
-        border-radius: 24px;
-        margin-right: 0.75rem;
-      }
-
-      .chat-input button {
-        background-color: #1e3c72;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .chat-input button:hover {
-        background-color: #2a5298;
-      }
-
-      .pulse-effect {
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(42, 82, 152, 0.2) 0%,
-          rgba(42, 82, 152, 0) 70%
-        );
-        z-index: 0;
-        animation: pulse 4s infinite;
-      }
-
-      .pulse-effect-1 {
-        top: -100px;
-        right: 10%;
-      }
-
-      .pulse-effect-2 {
-        bottom: -150px;
-        left: 5%;
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(0.8);
-          opacity: 0.8;
-        }
-        50% {
-          transform: scale(1.2);
-          opacity: 0.4;
-        }
-        100% {
-          transform: scale(0.8);
-          opacity: 0.8;
-        }
-      }
-
-      .ai-badge {
-        display: inline-flex;
-        align-items: center;
-        background: linear-gradient(135deg, #1e3c72, #2a5298);
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 30px;
-        font-weight: 600;
-        font-size: 0.875rem;
-        margin-bottom: 1rem;
-      }
-
-      .ai-badge i {
-        margin-right: 0.5rem;
-      }
-
-      @media (max-width: 991.98px) {
-        .ai-demo-wrapper {
-          margin-top: 2rem;
-        }
-      }
-    </style>
-
-    <section class="ai-learning-section" id="ai-learning">
-      <div class="pulse-effect pulse-effect-1"></div>
-      <div class="pulse-effect pulse-effect-2"></div>
-
-      <div class="container">
-        <div class="section-header">
-          <div class="ai-badge">
-            <i class="bi bi-lightning-fill"></i> AI-Powered Learning
-          </div>
-          <h2 class="section-title">Revolutionizing Education with AI</h2>
-          <p class="section-subtitle">
-            Experience the power of personalized learning with our
-            ChatGPT-powered AI tutoring system. Get instant help, personalized
-            feedback, and adaptive learning paths tailored just for you.
-          </p>
-        </div>
-
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="row g-4">
-              <!-- AI Feature 1 -->
-              <div class="col-md-6">
-                <div class="ai-feature-card p-4">
-                  <div class="ai-feature-icon">
-                    <i class="bi bi-person-check-fill"></i>
-                  </div>
-                  <h3 class="ai-feature-title">Personalized Learning</h3>
-                  <p class="ai-feature-text">
-                    AI analyzes your learning style and progress to create
-                    personalized study plans that adapt to your needs.
-                  </p>
-                </div>
+        <div
+          class="modal fade"
+          id="courseFinderModal"
+          tabindex="-1"
+          aria-labelledby="courseFinderLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content shadow">
+              <div class="modal-header">
+                <h5 class="modal-title" id="courseFinderLabel">
+                  <i class="fas fa-graduation-cap me-2"></i> Shivkumb EdTech -
+                  Your Path to Excellence
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
               </div>
-
-              <!-- AI Feature 2 -->
-              <div class="col-md-6">
-                <div class="ai-feature-card p-4">
-                  <div class="ai-feature-icon">
-                    <i class="bi bi-clock-history"></i>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-lg-7">
+                    <form id="courseForm">
+                      <div class="mb-3">
+                        <label for="studentName" class="form-label">
+                          <i class="fas fa-user me-2"></i>Full Name
+                        </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="studentName"
+                          placeholder="Enter your full name"
+                          required
+                        />
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label for="studentEmail" class="form-label">
+                              <i class="fas fa-envelope me-2"></i>Email
+                            </label>
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="studentEmail"
+                              placeholder="Your email address"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label for="studentPhone" class="form-label">
+                              <i class="fas fa-phone me-2"></i>Phone Number
+                            </label>
+                            <input
+                              type="tel"
+                              class="form-control"
+                              id="studentPhone"
+                              placeholder="Your contact number"
+                              required
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="courseInterest" class="form-label">
+                          <i class="fas fa-book-open me-2"></i>Interested Course
+                        </label>
+                        <select
+                          class="form-select"
+                          id="courseInterest"
+                          required
+                        >
+                          <option selected disabled value="">
+                            Select a course that matches your goals
+                          </option>
+                          <option value="JEE">
+                            JEE Preparation (Classes 11-12)
+                          </option>
+                          <option value="NEET">
+                            NEET Coaching (Classes 11-12)
+                          </option>
+                          <option value="Class 10">
+                            Class 10 Foundation Program
+                          </option>
+                          <option value="Class 6-8">
+                            Class 6-8 Bridge Program
+                          </option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">
+                          <i class="fas fa-calendar me-2"></i>Preferred Learning
+                          Mode
+                        </label>
+                        <div class="d-flex flex-wrap gap-3">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="learningMode"
+                              id="onlineMode"
+                              value="online"
+                              checked
+                            />
+                            <label class="form-check-label" for="onlineMode">
+                              Online Live Classes
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="learningMode"
+                              id="offlineMode"
+                              value="offline"
+                            />
+                            <label class="form-check-label" for="offlineMode">
+                              Classroom Learning
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="learningMode"
+                              id="hybridMode"
+                              value="hybrid"
+                            />
+                            <label class="form-check-label" for="hybridMode">
+                              Hybrid (Online + Offline)
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="additionalInfo" class="form-label">
+                          <i class="fas fa-comment me-2"></i>Additional
+                          Information
+                        </label>
+                        <textarea
+                          class="form-control"
+                          id="additionalInfo"
+                          rows="2"
+                          placeholder="Any specific requirements or questions?"
+                        ></textarea>
+                      </div>
+                      <div class="form-check mb-3">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="termsCheck"
+                          required
+                        />
+                        <label class="form-check-label" for="termsCheck">
+                          I agree to receive information about courses and
+                          promotions
+                        </label>
+                      </div>
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-primary">
+                          <i class="fas fa-check-circle me-2"></i>Join Shivkumb
+                          Today
+                        </button>
+                      </div>
+                      <div id="successMessage" class="success-message">
+                        <i class="fas fa-check-circle me-2"></i>Thank you! Your
+                        application has been received. Our Shivkumb counselor
+                        will contact you shortly.
+                      </div>
+                    </form>
                   </div>
-                  <h3 class="ai-feature-title">24/7 Doubt Solving</h3>
-                  <p class="ai-feature-text">
-                    Get immediate answers to your questions anytime with our AI
-                    tutor that's always available to help.
-                  </p>
-                </div>
-              </div>
-
-              <!-- AI Feature 3 -->
-              <div class="col-md-6">
-                <div class="ai-feature-card p-4 mt-4">
-                  <div class="ai-feature-icon">
-                    <i class="bi bi-graph-up-arrow"></i>
+                  <div class="col-lg-5 d-none d-lg-block">
+                    <div class="mb-4">
+                      <h5 class="mb-3">Why Choose Shivkumb EdTech?</h5>
+                      <ul class="list-unstyled">
+                        <li class="mb-2">
+                          <i class="fas fa-check-circle text-success me-2"></i>
+                          Top-ranked faculty with IIT/AIIMS background
+                        </li>
+                        <li class="mb-2">
+                          <i class="fas fa-check-circle text-success me-2"></i>
+                          AI-powered personalized learning paths
+                        </li>
+                        <li class="mb-2">
+                          <i class="fas fa-check-circle text-success me-2"></i>
+                          Interactive digital learning platform
+                        </li>
+                        <li class="mb-2">
+                          <i class="fas fa-check-circle text-success me-2"></i>
+                          Weekly assessments and detailed analytics
+                        </li>
+                        <li class="mb-2">
+                          <i class="fas fa-check-circle text-success me-2"></i>
+                          24/7 doubt resolution support
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="testimonial">
+                      <div class="d-flex align-items-center mb-3">
+                        <img
+                          src="/api/placeholder/60/60"
+                          alt="Student"
+                          class="student-profile me-3"
+                        />
+                        <div>
+                          <h6 class="mb-0">Rahul Verma</h6>
+                          <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="mb-0">
+                        <em
+                          >"Shivkumb EdTech transformed my preparation. Their
+                          structured approach helped me secure AIR 856 in JEE
+                          Advanced. Forever grateful!"</em
+                        >
+                      </p>
+                    </div>
                   </div>
-                  <h3 class="ai-feature-title">Progress Tracking</h3>
-                  <p class="ai-feature-text">
-                    Advanced analytics identify knowledge gaps and suggest
-                    focused practice areas to improve performance.
-                  </p>
-                </div>
-              </div>
-
-              <!-- AI Feature 4 -->
-              <div class="col-md-6">
-                <div class="ai-feature-card p-4 mt-4">
-                  <div class="ai-feature-icon">
-                    <i class="bi bi-translate"></i>
-                  </div>
-                  <h3 class="ai-feature-title">Multilingual Support</h3>
-                  <p class="ai-feature-text">
-                    Learn complex concepts in your preferred language with our
-                    AI that supports multiple Indian languages.
-                  </p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col-lg-6">
-            <div class="ai-demo-wrapper">
-              <div class="ai-chat-header">
-                <div class="ai-chat-icon">
-                  <i class="bi bi-robot"></i>
+        <script>
+          document
+            .getElementById("courseForm")
+            .addEventListener("submit", function (e) {
+              e.preventDefault();
+
+              // Form validation
+              const form = document.getElementById("courseForm");
+              if (!form.checkValidity()) {
+                e.stopPropagation();
+                form.classList.add("was-validated");
+                return;
+              }
+
+              // Hide form elements
+              const formElements = form.querySelectorAll(
+                "input, select, textarea, button"
+              );
+              formElements.forEach((element) => {
+                element.disabled = true;
+              });
+
+              // Show success message
+              document.getElementById("successMessage").style.display = "block";
+
+              // Simulating payment process
+              setTimeout(() => {
+                // You would redirect to payment gateway here
+                console.log("Processing payment and enrollment...");
+                // Example: window.location.href = '/payment-gateway';
+              }, 3000);
+            });
+        </script>
+        <!-- Optimized Testimonials Section with Horizontal Carousel -->
+
+        <style>
+          /* Testimonials Section Styles */
+          .testimonials-section {
+            padding: 5rem 0;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            position: relative;
+            overflow: hidden;
+          }
+
+          .testimonials-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2320304b' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            z-index: 0;
+          }
+
+          .section-title {
+            position: relative;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 3rem;
+            text-align: center;
+          }
+
+          .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -0.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            border-radius: 2px;
+          }
+
+          /* Testimonial Cards Carousel */
+          .testimonial-carousel-container {
+            position: relative;
+            padding: 1.5rem 0;
+          }
+
+          .testimonial-carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+            padding: 1rem 0.5rem 2rem 0.5rem;
+          }
+
+          .testimonial-carousel::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+          }
+
+          .testimonial-card {
+            min-width: 300px;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            border: none;
+            transform: translateY(0);
+          }
+
+          .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+          }
+
+          .testimonial-content {
+            position: relative;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+          }
+
+          .testimonial-content::before {
+            content: """;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 4rem;
+            color: rgba(66, 153, 225, 0.2);
+            font-family: serif;
+            z-index: 0;
+          }
+
+          .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+          }
+
+          .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e3c72;
+            font-weight: 700;
+            font-size: 1.25rem;
+          }
+
+          .author-info {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .author-name {
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.25rem;
+          }
+
+          .author-title {
+            font-size: 0.875rem;
+            color: #718096;
+          }
+
+          .rating {
+            color: #f59e0b;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+          }
+
+          /* Navigation buttons */
+          .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+          }
+
+          .carousel-control {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: #1e3c72;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          }
+
+          .carousel-control:hover {
+            background-color: #2a5298;
+            transform: scale(1.05);
+          }
+
+          .carousel-control:focus {
+            outline: none;
+          }
+
+          .carousel-control:disabled {
+            background-color: #cbd5e0;
+            cursor: not-allowed;
+          }
+
+          /* Auto-scrolling animation with pause on hover */
+          @keyframes scrollLeft {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(calc(-320px * 5)); /* Adjust based on card width + gap */
+            }
+          }
+
+          .auto-scroll {
+            animation: scrollLeft 30s linear infinite;
+          }
+
+          .testimonial-carousel:hover .auto-scroll {
+            animation-play-state: paused;
+          }
+
+          /* Responsive adjustments */
+          @media (max-width: 768px) {
+            .testimonial-card {
+              min-width: 280px;
+            }
+
+            .section-title {
+              font-size: 1.75rem;
+            }
+          }
+        </style>
+
+        <section class="testimonials-section" id="testimonials">
+          <div class="container">
+            <h2 class="section-title">What Our Students Say</h2>
+
+            <div class="testimonial-carousel-container">
+              <div class="testimonial-carousel">
+                <!-- Testimonial Card 1 -->
+                <div class="testimonial-card">
+                  <div class="rating">★★★★★</div>
+                  <p class="testimonial-content">
+                    "Amazing platform! The instructors are extremely
+                    knowledgeable and helped me improve my JEE scores
+                    drastically. The interactive sessions make complex concepts
+                    easy to understand."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">RS</div>
+                    <div class="author-info">
+                      <div class="author-name">Riya Sharma</div>
+                      <div class="author-title">JEE Aspirant</div>
+                    </div>
+                  </div>
                 </div>
-                <h4 class="ai-chat-title">ShivKumb AI Tutor</h4>
+
+                <!-- Testimonial Card 2 -->
+                <div class="testimonial-card">
+                  <div class="rating">★★★★★</div>
+                  <p class="testimonial-content">
+                    "The live classes are so engaging and interactive. I never
+                    feel bored during the sessions. Best decision ever! The
+                    teachers explain concepts in a way that's easy to grasp."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">AV</div>
+                    <div class="author-info">
+                      <div class="author-name">Aman Verma</div>
+                      <div class="author-title">Class 10</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial Card 3 -->
+                <div class="testimonial-card">
+                  <div class="rating">★★★★★</div>
+                  <p class="testimonial-content">
+                    "Excellent teachers and easy-to-understand content. The
+                    step-by-step explanations and visual aids make learning
+                    enjoyable. I've seen significant improvement in my grades."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">NS</div>
+                    <div class="author-info">
+                      <div class="author-name">Neha Singh</div>
+                      <div class="author-title">Class 8</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial Card 4 -->
+                <div class="testimonial-card">
+                  <div class="rating">★★★★☆</div>
+                  <p class="testimonial-content">
+                    "Recorded sessions let me revise anytime, anywhere. This
+                    flexibility has been a game-changer for my NEET preparation.
+                    The platform is user-friendly and accessible."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">KM</div>
+                    <div class="author-info">
+                      <div class="author-name">Kabir Mehta</div>
+                      <div class="author-title">NEET Aspirant</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial Card 5 -->
+                <div class="testimonial-card">
+                  <div class="rating">★★★★★</div>
+                  <p class="testimonial-content">
+                    "Supportive faculty and great study materials. The mentors
+                    are always available to clear doubts. The practice questions
+                    have been crucial for my board exam preparation."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">SR</div>
+                    <div class="author-info">
+                      <div class="author-name">Sneha Raj</div>
+                      <div class="author-title">Class 12</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial Card 6 -->
+                <div class="testimonial-card">
+                  <div class="rating">★★★★☆</div>
+                  <p class="testimonial-content">
+                    "User-friendly platform with excellent live doubt support.
+                    The instant feedback system has helped me identify my weak
+                    areas and work on them effectively."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">HK</div>
+                    <div class="author-info">
+                      <div class="author-name">Harsh Kapoor</div>
+                      <div class="author-title">Class 11</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial Card 7 -->
+                <div class="testimonial-card">
+                  <div class="rating">★★★★★</div>
+                  <p class="testimonial-content">
+                    "Regular tests helped me stay on track. Highly recommended!
+                    The detailed performance analytics give clear insights into
+                    my progress and areas for improvement."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">IM</div>
+                    <div class="author-info">
+                      <div class="author-name">Ishita Malhotra</div>
+                      <div class="author-title">Class 9</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial Card 8 -->
+                <div class="testimonial-card">
+                  <div class="rating">★★★★★</div>
+                  <p class="testimonial-content">
+                    "The mentors here really care about your success. They go
+                    above and beyond to ensure you understand concepts
+                    thoroughly. Their dedication is commendable."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">AS</div>
+                    <div class="author-info">
+                      <div class="author-name">Anuj Saini</div>
+                      <div class="author-title">JEE Droppers Batch</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial Card 9 -->
+                <div class="testimonial-card">
+                  <div class="rating">★★★★☆</div>
+                  <p class="testimonial-content">
+                    "Parent dashboard helped me track my child's progress. The
+                    detailed reports and communication channels with teachers
+                    make it easy to stay involved in my child's education."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">MG</div>
+                    <div class="author-info">
+                      <div class="author-name">Manish Gupta</div>
+                      <div class="author-title">Parent</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial Card 10 -->
+                <div class="testimonial-card">
+                  <div class="rating">★★★★★</div>
+                  <p class="testimonial-content">
+                    "Affordable pricing with top-quality teaching! The value for
+                    money is exceptional. I've tried other platforms but none
+                    match the quality of education provided here."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">PB</div>
+                    <div class="author-info">
+                      <div class="author-name">Pooja Batra</div>
+                      <div class="author-title">Class 6</div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div class="ai-chat-body">
-                <!-- AI Message -->
-                <div class="chat-message ai">
-                  <div class="message-avatar ai">AI</div>
-                  <div class="message-content">
-                    Hello! I'm your ShivKumb AI Tutor. How can I help with your
-                    studies today?
-                    <div class="message-time">10:30 AM</div>
-                  </div>
-                </div>
-
-                <!-- User Message -->
-                <div class="chat-message user">
-                  <div class="message-avatar user">S</div>
-                  <div class="message-content">
-                    I'm having trouble understanding Newton's Third Law. Can you
-                    explain it clearly?
-                    <div class="message-time">10:32 AM</div>
-                  </div>
-                </div>
-
-                <!-- AI Message -->
-                <div class="chat-message ai">
-                  <div class="message-avatar ai">AI</div>
-                  <div class="message-content">
-                    Sure! Newton's Third Law states that for every action, there
-                    is an equal and opposite reaction. Let me explain with a
-                    simple example:
-                    <br /><br />
-                    When you push against a wall, you exert a force on it. At
-                    the same time, the wall exerts an equal force back on you in
-                    the opposite direction. That's why your hand feels pressure
-                    when pushing against the wall.
-                    <br /><br />
-                    Would you like me to provide some everyday examples or
-                    practice problems?
-                    <div class="message-time">10:33 AM</div>
-                  </div>
-                </div>
-
-                <!-- User Message -->
-                <div class="chat-message user">
-                  <div class="message-avatar user">S</div>
-                  <div class="message-content">
-                    Yes, please give me some everyday examples!
-                    <div class="message-time">10:34 AM</div>
-                  </div>
-                </div>
-
-                <!-- AI Message -->
-                <div class="chat-message ai">
-                  <div class="message-avatar ai">AI</div>
-                  <div class="message-content">
-                    Great! Here are some everyday examples of Newton's Third
-                    Law:
-                    <br /><br />
-                    1. Swimming: When you push water backward, the water pushes
-                    you forward
-                    <br /><br />
-                    2. Walking: Your feet push against the ground, and the
-                    ground pushes back, propelling you forward
-                    <br /><br />
-                    3. Rocket propulsion: The rocket expels gas downward, and
-                    the gas pushes the rocket upward
-                    <br /><br />
-                    Would you like me to create a quick quiz to test your
-                    understanding?
-                    <div class="message-time">10:35 AM</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="chat-input">
-                <input
-                  type="text"
-                  placeholder="Ask your question..."
-                  class="form-control"
-                />
-                <button type="button">
-                  <i class="bi bi-send-fill"></i>
+              <div class="carousel-controls">
+                <button
+                  class="carousel-control prev-btn"
+                  aria-label="Previous testimonials"
+                >
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+                <button
+                  class="carousel-control next-btn"
+                  aria-label="Next testimonials"
+                >
+                  <i class="bi bi-chevron-right"></i>
                 </button>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div class="row mt-5">
-          <div class="col-12 text-center">
-            <a href="#" class="btn btn-primary btn-lg px-4 py-2"
-              >Experience AI Learning</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Blog link section -->
-    <footer class="pt-4 pb-0">
-      <div class="container">
-        <div class="row">
-          <!-- About Us Column -->
-          <div class="col-md-4 mb-4">
-            <h5>About Us</h5>
-            <ul class="mb-0">
-              <li><a href="#">Company Overview</a></li>
-              <li><a href="#">Our Team</a></li>
-              <li><a href="#">Mission & Vision</a></li>
-              <li><a href="#">Careers</a></li>
-            </ul>
-          </div>
+        <script>
+          // JavaScript for testimonial carousel functionality
+          document.addEventListener("DOMContentLoaded", function () {
+            const carousel = document.querySelector(".testimonial-carousel");
+            const prevBtn = document.querySelector(".prev-btn");
+            const nextBtn = document.querySelector(".next-btn");
+            const cardWidth = 320; // Card width + gap
 
-          <!-- Contact Column -->
-          <div class="col-md-4 mb-4">
-            <h5>Contact</h5>
-            <ul class="mb-0">
-              <li><a href="#">Contact Form</a></li>
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Feedback</a></li>
-              <li><i class="bi bi-envelope me-2"></i>info@shivkumb.edu</li>
-              <li><i class="bi bi-telephone me-2"></i>+91 (800) 123-4567</li>
-            </ul>
-          </div>
+            // Scroll carousel left
+            prevBtn.addEventListener("click", function () {
+              carousel.scrollBy({
+                left: -cardWidth * 2,
+                behavior: "smooth",
+              });
+            });
 
-          <!-- Policies Column -->
-          <div class="col-md-4 mb-4">
-            <h5>Policies</h5>
-            <ul class="mb-0">
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Cookie Policy</a></li>
-              <li><a href="#">Data Protection</a></li>
-              <li><a href="#">Academic Integrity</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+            // Scroll carousel right
+            nextBtn.addEventListener("click", function () {
+              carousel.scrollBy({
+                left: cardWidth * 2,
+                behavior: "smooth",
+              });
+            });
 
-      <!-- Footer Bottom -->
-      <div class="footer-bottom py-3">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 text-center text-md-start">
-              <p class="mb-0">
-                &copy; 2025 ShivKumb EdTech. All Rights Reserved.
+            // Clone testimonials for infinite effect
+            const testimonialCards =
+              document.querySelectorAll(".testimonial-card");
+            testimonialCards.forEach((card) => {
+              const clone = card.cloneNode(true);
+              carousel.appendChild(clone);
+            });
+
+            // Check scroll position to enable/disable buttons
+            carousel.addEventListener("scroll", function () {
+              const scrollLeft = carousel.scrollLeft;
+              const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+
+              prevBtn.disabled = scrollLeft <= 0;
+              nextBtn.disabled = scrollLeft >= maxScrollLeft - 5;
+            });
+
+            // Auto scroll functionality
+            let isScrolling = false;
+            let scrollInterval;
+
+            function startAutoScroll() {
+              if (!isScrolling) {
+                isScrolling = true;
+                scrollInterval = setInterval(() => {
+                  if (
+                    carousel.scrollLeft >=
+                    carousel.scrollWidth / 2 - carousel.clientWidth
+                  ) {
+                    carousel.scrollLeft = 0;
+                  } else {
+                    carousel.scrollLeft += 1;
+                  }
+                }, 30);
+              }
+            }
+
+            function stopAutoScroll() {
+              isScrolling = false;
+              clearInterval(scrollInterval);
+            }
+
+            // Start auto-scroll by default
+            startAutoScroll();
+
+            // Pause on hover/touch
+            carousel.addEventListener("mouseenter", stopAutoScroll);
+            carousel.addEventListener("touchstart", stopAutoScroll);
+
+            // Resume on mouse leave/touch end
+            carousel.addEventListener("mouseleave", startAutoScroll);
+            carousel.addEventListener("touchend", startAutoScroll);
+          });
+        </script>
+        <!-- Students & Parents Section -->
+        <!-- AI-Powered Learning Advantages Section -->
+
+        <style>
+          /* AI Learning Section Styles */
+          .ai-learning-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+            position: relative;
+            overflow: hidden;
+          }
+
+          .ai-learning-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e3c72' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 1;
+            z-index: 0;
+          }
+
+          .section-header {
+            position: relative;
+            margin-bottom: 3rem;
+            z-index: 1;
+          }
+
+          .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+          }
+
+          .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -0.75rem;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            border-radius: 2px;
+          }
+
+          .section-subtitle {
+            font-size: 1.125rem;
+            color: #4a5568;
+            max-width: 800px;
+          }
+
+          .ai-feature-card {
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+            border: none;
+          }
+
+          .ai-feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+          }
+
+          .ai-feature-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+          }
+
+          .ai-feature-title {
+            color: #2d3748;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+          }
+
+          .ai-feature-text {
+            color: #4a5568;
+            font-size: 1rem;
+            line-height: 1.6;
+          }
+
+          .ai-demo-wrapper {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+            height: 100%;
+          }
+
+          .ai-chat-header {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+          }
+
+          .ai-chat-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+          }
+
+          .ai-chat-title {
+            font-weight: 600;
+            margin: 0;
+            font-size: 1.125rem;
+          }
+
+          .ai-chat-body {
+            padding: 1.5rem;
+            height: 350px;
+            overflow-y: auto;
+          }
+
+          .chat-message {
+            display: flex;
+            margin-bottom: 1.5rem;
+          }
+
+          .chat-message.user {
+            flex-direction: row-reverse;
+          }
+
+          .message-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+          }
+
+          .message-avatar.ai {
+            background-color: #1e3c72;
+            color: white;
+          }
+
+          .message-avatar.user {
+            background-color: #e2e8f0;
+            color: #1e3c72;
+          }
+
+          .message-content {
+            max-width: 75%;
+            padding: 1rem;
+            border-radius: 12px;
+            margin: 0 1rem;
+          }
+
+          .chat-message.ai .message-content {
+            background-color: #f3f4f6;
+            color: #1f2937;
+          }
+
+          .chat-message.user .message-content {
+            background-color: #1e3c72;
+            color: white;
+          }
+
+          .message-time {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 0.5rem;
+            text-align: right;
+          }
+
+          .chat-input {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-top: 1px solid #e2e8f0;
+          }
+
+          .chat-input input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            margin-right: 0.75rem;
+          }
+
+          .chat-input button {
+            background-color: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+
+          .chat-input button:hover {
+            background-color: #2a5298;
+          }
+
+          .pulse-effect {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(
+              circle,
+              rgba(42, 82, 152, 0.2) 0%,
+              rgba(42, 82, 152, 0) 70%
+            );
+            z-index: 0;
+            animation: pulse 4s infinite;
+          }
+
+          .pulse-effect-1 {
+            top: -100px;
+            right: 10%;
+          }
+
+          .pulse-effect-2 {
+            bottom: -150px;
+            left: 5%;
+          }
+
+          @keyframes pulse {
+            0% {
+              transform: scale(0.8);
+              opacity: 0.8;
+            }
+            50% {
+              transform: scale(1.2);
+              opacity: 0.4;
+            }
+            100% {
+              transform: scale(0.8);
+              opacity: 0.8;
+            }
+          }
+
+          .ai-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+          }
+
+          .ai-badge i {
+            margin-right: 0.5rem;
+          }
+
+          @media (max-width: 991.98px) {
+            .ai-demo-wrapper {
+              margin-top: 2rem;
+            }
+          }
+        </style>
+
+        <section class="ai-learning-section" id="ai-learning">
+          <div class="pulse-effect pulse-effect-1"></div>
+          <div class="pulse-effect pulse-effect-2"></div>
+
+          <div class="container">
+            <div class="section-header">
+              <div class="ai-badge">
+                <i class="bi bi-lightning-fill"></i> AI-Powered Learning
+              </div>
+              <h2 class="section-title">Revolutionizing Education with AI</h2>
+              <p class="section-subtitle">
+                Experience the power of personalized learning with our
+                ChatGPT-powered AI tutoring system. Get instant help,
+                personalized feedback, and adaptive learning paths tailored just
+                for you.
               </p>
             </div>
-            <div class="col-md-6 text-center text-md-end">
-              <a href="#" class="me-3">Sitemap</a>
-              <a href="#" class="me-3">Accessibility</a>
-              <a href="#">FAQ</a>
+
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <div class="row g-4">
+                  <!-- AI Feature 1 -->
+                  <div class="col-md-6">
+                    <div class="ai-feature-card p-4">
+                      <div class="ai-feature-icon">
+                        <i class="bi bi-person-check-fill"></i>
+                      </div>
+                      <h3 class="ai-feature-title">Personalized Learning</h3>
+                      <p class="ai-feature-text">
+                        AI analyzes your learning style and progress to create
+                        personalized study plans that adapt to your needs.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- AI Feature 2 -->
+                  <div class="col-md-6">
+                    <div class="ai-feature-card p-4">
+                      <div class="ai-feature-icon">
+                        <i class="bi bi-clock-history"></i>
+                      </div>
+                      <h3 class="ai-feature-title">24/7 Doubt Solving</h3>
+                      <p class="ai-feature-text">
+                        Get immediate answers to your questions anytime with our
+                        AI tutor that's always available to help.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- AI Feature 3 -->
+                  <div class="col-md-6">
+                    <div class="ai-feature-card p-4 mt-4">
+                      <div class="ai-feature-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
+                      </div>
+                      <h3 class="ai-feature-title">Progress Tracking</h3>
+                      <p class="ai-feature-text">
+                        Advanced analytics identify knowledge gaps and suggest
+                        focused practice areas to improve performance.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- AI Feature 4 -->
+                  <div class="col-md-6">
+                    <div class="ai-feature-card p-4 mt-4">
+                      <div class="ai-feature-icon">
+                        <i class="bi bi-translate"></i>
+                      </div>
+                      <h3 class="ai-feature-title">Multilingual Support</h3>
+                      <p class="ai-feature-text">
+                        Learn complex concepts in your preferred language with
+                        our AI that supports multiple Indian languages.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="ai-demo-wrapper">
+                  <div class="ai-chat-header">
+                    <div class="ai-chat-icon">
+                      <i class="bi bi-robot"></i>
+                    </div>
+                    <h4 class="ai-chat-title">ShivKumb AI Tutor</h4>
+                  </div>
+
+                  <div class="ai-chat-body">
+                    <!-- AI Message -->
+                    <div class="chat-message ai">
+                      <div class="message-avatar ai">AI</div>
+                      <div class="message-content">
+                        Hello! I'm your ShivKumb AI Tutor. How can I help with
+                        your studies today?
+                        <div class="message-time">10:30 AM</div>
+                      </div>
+                    </div>
+
+                    <!-- User Message -->
+                    <div class="chat-message user">
+                      <div class="message-avatar user">S</div>
+                      <div class="message-content">
+                        I'm having trouble understanding Newton's Third Law. Can
+                        you explain it clearly?
+                        <div class="message-time">10:32 AM</div>
+                      </div>
+                    </div>
+
+                    <!-- AI Message -->
+                    <div class="chat-message ai">
+                      <div class="message-avatar ai">AI</div>
+                      <div class="message-content">
+                        Sure! Newton's Third Law states that for every action,
+                        there is an equal and opposite reaction. Let me explain
+                        with a simple example:
+                        <br /><br />
+                        When you push against a wall, you exert a force on it.
+                        At the same time, the wall exerts an equal force back on
+                        you in the opposite direction. That's why your hand
+                        feels pressure when pushing against the wall.
+                        <br /><br />
+                        Would you like me to provide some everyday examples or
+                        practice problems?
+                        <div class="message-time">10:33 AM</div>
+                      </div>
+                    </div>
+
+                    <!-- User Message -->
+                    <div class="chat-message user">
+                      <div class="message-avatar user">S</div>
+                      <div class="message-content">
+                        Yes, please give me some everyday examples!
+                        <div class="message-time">10:34 AM</div>
+                      </div>
+                    </div>
+
+                    <!-- AI Message -->
+                    <div class="chat-message ai">
+                      <div class="message-avatar ai">AI</div>
+                      <div class="message-content">
+                        Great! Here are some everyday examples of Newton's Third
+                        Law:
+                        <br /><br />
+                        1. Swimming: When you push water backward, the water
+                        pushes you forward
+                        <br /><br />
+                        2. Walking: Your feet push against the ground, and the
+                        ground pushes back, propelling you forward
+                        <br /><br />
+                        3. Rocket propulsion: The rocket expels gas downward,
+                        and the gas pushes the rocket upward
+                        <br /><br />
+                        Would you like me to create a quick quiz to test your
+                        understanding?
+                        <div class="message-time">10:35 AM</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="chat-input">
+                    <input
+                      type="text"
+                      placeholder="Ask your question..."
+                      class="form-control"
+                    />
+                    <button type="button">
+                      <i class="bi bi-send-fill"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-5">
+              <div class="col-12 text-center">
+                <a href="#" class="btn btn-primary btn-lg px-4 py-2"
+                  >Experience AI Learning</a
+                >
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </footer>
+        </section>
+        <!-- Blog link section -->
+        <footer class="pt-4 pb-0">
+          <div class="container">
+            <div class="row">
+              <!-- About Us Column -->
+              <div class="col-md-4 mb-4">
+                <h5>About Us</h5>
+                <ul class="mb-0">
+                  <li><a href="#">Company Overview</a></li>
+                  <li><a href="#">Our Team</a></li>
+                  <li><a href="#">Mission & Vision</a></li>
+                  <li><a href="#">Careers</a></li>
+                </ul>
+              </div>
 
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+              <!-- Contact Column -->
+              <div class="col-md-4 mb-4">
+                <h5>Contact</h5>
+                <ul class="mb-0">
+                  <li><a href="#">Contact Form</a></li>
+                  <li><a href="#">Support</a></li>
+                  <li><a href="#">Feedback</a></li>
+                  <li><i class="bi bi-envelope me-2"></i>info@shivkumb.edu</li>
+                  <li>
+                    <i class="bi bi-telephone me-2"></i>+91 (800) 123-4567
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Policies Column -->
+              <div class="col-md-4 mb-4">
+                <h5>Policies</h5>
+                <ul class="mb-0">
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms of Service</a></li>
+                  <li><a href="#">Cookie Policy</a></li>
+                  <li><a href="#">Data Protection</a></li>
+                  <li><a href="#">Academic Integrity</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom py-3">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                  <p class="mb-0">
+                    &copy; 2025 ShivKumb EdTech. All Rights Reserved.
+                  </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                  <a href="#" class="me-3">Sitemap</a>
+                  <a href="#" class="me-3">Accessibility</a>
+                  <a href="#">FAQ</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <!-- Bootstrap JS Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      </body>
+    </html>
   </body>
 </html>
